@@ -1,24 +1,15 @@
-# README
+# Valnerability Checker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create a Rails application which can inform user about new rubygems vulnerabilities. Use this resource https://rubysec.com/advisories.
 
-Things you may want to cover:
+   * Application should check this url and scrap data every 10 minutes. If there are any new vulnerabilities added - fetch it and save to DB.
+   * Display on index page and notify registered users via email etc. Integrating Slack, Telegram or any kind of messaging system would be a plus.
 
-* Ruby version
+Requirements:
 
-* System dependencies
+   * newest ruby version
+   * newest Rails version
+   * PostgreSQl
+   * Sidekiq
+   * rspec
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
