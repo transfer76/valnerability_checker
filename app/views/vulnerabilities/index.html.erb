@@ -3,16 +3,21 @@
 <table class="table">
   <thead>
     <tr>
+      <th scope="col">Date</th>
+      <th scope="col">RubyGem</th>
       <th scope="col">Title</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
 
   <tbody>
     <% @vulnerabilities.each do |vulnerability| %>
       <tr>
+        <td><%= vulnerability.date %></td>
+        <td><%= vulnerability.rubygem %></td>
         <td><%= vulnerability.title %></td>
         <td>
-          <%= link_to 'Show', vulnerability, class: 'block-link' %>
+          <%= link_to 'Show', vulnerability_path(vulnerability), class: 'block-link' %>
           <%= link_to 'Destroy', vulnerability, method: :delete, data: { confirm: 'Are you sure?' }, class: 'block-link' %>
         </td>
       </tr>
