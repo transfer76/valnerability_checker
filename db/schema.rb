@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2019_07_07_102908) do
 
   create_table "vulnerabilities", force: :cascade do |t|
     t.string "title"
+    t.string "gem"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
