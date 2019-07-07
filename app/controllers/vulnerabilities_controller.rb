@@ -1,5 +1,6 @@
 class VulnerabilitiesController < ApplicationController
-  before_action :set_vulnerability, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_vulnerability, only: [:show, :destroy]
 
   def index
     @vulnerabilities = Vulnerability.all
@@ -12,9 +13,6 @@ class VulnerabilitiesController < ApplicationController
     @vulnerability = Vulnerability.new
   end
 
-  def edit
-  end
-
   def create
     @vulnerability = Vulnerability.new(vulnerability_params)
 
@@ -22,14 +20,6 @@ class VulnerabilitiesController < ApplicationController
       redirect_to @vulnerability, notice: 'Vulnerability was successfully created.'
     else
       render :new
-    end
-  end
-
-  def update
-    if @vulnerability.update(vulnerability_params)
-      redirect_to @vulnerability, notice: 'Vulnerability was successfully updated.'
-    else
-      render :edit
     end
   end
 

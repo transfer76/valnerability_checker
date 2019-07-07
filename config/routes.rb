@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  root 'vulnerabilities#index'
 
-   root 'users#index'
+  resources :vulnerabilities, except: :edit
 end
