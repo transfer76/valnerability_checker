@@ -2,6 +2,11 @@ class VulnerabilitiesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_vulnerability, only: [:show, :destroy]
 
+  def checker
+    ValCheckerJob.perform_later(@vulnerability)
+    redirect_to @vulnerability.url
+  end
+
   def index
     @vulnerabilities = Vulnerability.all
   end
@@ -35,6 +40,6 @@ class VulnerabilitiesController < ApplicationController
   end
 
   def vulnerability_params
-    params.fetch(:vulnerability, {})
+    params.require(:vulnerability).permit(:title)
   end
 end
