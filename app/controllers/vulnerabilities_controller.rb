@@ -22,9 +22,10 @@ class VulnerabilitiesController < ApplicationController
     @vulnerability = Vulnerability.new(vulnerability_params)
 
     if @vulnerability.save
+      VulnerabilityMailer.vulnerability(@vulnerability).deliver_later
       redirect_to @vulnerability, notice: 'Vulnerability was successfully created.'
     else
-      render :new
+      render :index
     end
   end
 
