@@ -1,25 +1,23 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Vulnerabilities</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th scope="col">Title</th>
     </tr>
   </thead>
 
   <tbody>
     <% @vulnerabilities.each do |vulnerability| %>
       <tr>
-        <td><%= link_to 'Show', vulnerability %></td>
-        <td><%= link_to 'Edit', edit_vulnerability_path(vulnerability) %></td>
-        <td><%= link_to 'Destroy', vulnerability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= vulnerability.title %></td>
+        <td>
+          <%= link_to 'Show', vulnerability, class: 'block-link' %>
+          <%= link_to 'Destroy', vulnerability, method: :delete, data: { confirm: 'Are you sure?' }, class: 'block-link' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
 
 <%= link_to 'New Vulnerability', new_vulnerability_path %>
