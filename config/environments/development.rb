@@ -1,4 +1,7 @@
 Rails.application.configure do
+
+  config.active_job.queue_adapter = :sidekiq
+  config.active_job.queue_name_prefix = "valnerability_checker_#{Rails.env}"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -28,6 +31,8 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+
+  config.action_mailer.delivery_method = :letter_opener
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
