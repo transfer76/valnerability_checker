@@ -1,6 +1,6 @@
 class VulnerabilitiesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_vulnerability, only: [:show, :destroy]
+  before_action :set_vulnerability, only: [:checker, :show, :destroy]
 
   def checker
     ValCheckerJob.perform_later(@vulnerability)
