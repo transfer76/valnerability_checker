@@ -40,6 +40,6 @@ class VulnerabilitiesController < ApplicationController
   end
 
   def vulnerability_params
-    params.require(:vulnerability).permit(:title)
+    params.require(:vulnerability).permit(:title, :rubygem, :date)
   end
 end
