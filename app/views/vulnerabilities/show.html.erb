@@ -1,18 +1,18 @@
-<div class="container">
-  <div class="row">
-	<strong>Date:</strong><%= @vulnerability.date %>
-  </div>
-  <hr>
-  <div class="row">
-	<strong>RubyGem:</strong><%= @vulnerability.rubygem %>
-  </div>
-  <hr>
-  <div class="row">
-	<strong>Title:</strong><%= @vulnerability.title %>
-  </div>
-  <hr>
-</div>
-
 <div class="button fa fa-arrow-left fa-lg">
   <%= link_to 'Back', vulnerabilities_path, class: "btn btn-outline-dark" %>
+</div>
+
+<div class="container">
+  <div class="row">
+	  <strong>Date:</strong><%= @vulnerability.date %>
+  </div>
+  <hr>
+  <div class="row">
+	  <strong>RubyGem:</strong><%= @vulnerability.rubygem %>
+  </div>
+  <hr>
+  <div class="row">
+	  <strong>Title:</strong><%= @vulnerability.title %>
+  </div>
+  <hr>
 </div>

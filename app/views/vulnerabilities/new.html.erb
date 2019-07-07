@@ -1,5 +1,7 @@
+<div class="button fa fa-arrow-left fa-lg">
+  <%= link_to 'Back', vulnerabilities_path, class: "btn btn-outline-dark" %>
+</div>
+
 <h1>New Vulnerability</h1>
 
 <%= render 'form', vulnerability: @vulnerability %>
-
-<%= link_to 'Back', vulnerabilities_path %>
