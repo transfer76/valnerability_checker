@@ -13,7 +13,7 @@
   <tbody>
     <% @vulnerabilities.each do |vulnerability| %>
       <tr>
-        <td><%= vulnerability.date %></td>
+        <td><%= vulnerability.date.strftime('%d.%m.%Y') %></td>
         <td><%= vulnerability.rubygem %></td>
         <td><%= vulnerability.title %></td>
         <td>
