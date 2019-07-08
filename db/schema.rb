@@ -33,8 +33,10 @@ ActiveRecord::Schema.define(version: 2019_07_07_102908) do
     t.string "title"
     t.string "rubygem"
     t.datetime "date"
+    t.string "cve"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cve", "date", "rubygem", "title"], name: "index_vulnerabilities_on_cve_and_date_and_rubygem_and_title", unique: true
   end
 
 end

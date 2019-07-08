@@ -1,4 +1,4 @@
-# Valnerability Checker
+# Vulnerability Checker
 
 Create a Rails application which can inform user about new rubygems vulnerabilities. Use this resource https://rubysec.com/advisories.
 
@@ -12,4 +12,13 @@ Requirements:
    * PostgreSQl
    * Sidekiq
    * rspec
+
+## Assumptions
+
+* For each vulnerability separate email is sent
+
+## Limitations
+
+* Parses only first page
+* Does not parse description
 

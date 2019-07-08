@@ -17,10 +17,13 @@ gem 'twitter-bootstrap-rails'
 gem 'sidekiq'
 gem 'whenever', require: false
 gem 'dotenv'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
