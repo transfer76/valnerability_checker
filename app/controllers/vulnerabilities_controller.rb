@@ -22,7 +22,7 @@ class VulnerabilitiesController < ApplicationController
     @vulnerability = Vulnerability.new(vulnerability_params)
 
     if @vulnerability.save
-      VulnerabilityMailer.vulnerability(@vulnerability).deliver_later
+      notify_users(@vulnerability)
       redirect_to @vulnerability, notice: 'Vulnerability was successfully created.'
     else
       render :index
@@ -42,5 +42,12 @@ class VulnerabilitiesController < ApplicationController
 
   def vulnerability_params
     params.require(:vulnerability).permit(:title, :rubygem, :date)
+  end
+
+  def notify_users(vulnerability)
+    all_emails = (@user.map(&:email)).uniq
+    all_emails.each do |mail|
+      VulnerabilityMailer.vulnerability(vulnerability).deliver_now
+    end
   end
 end
