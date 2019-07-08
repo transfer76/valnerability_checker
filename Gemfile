@@ -16,6 +16,7 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'sidekiq'
 gem 'whenever', require: false
+gem 'dotenv'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
