@@ -6,7 +6,7 @@
       <th scope="col">Date</th>
       <th scope="col">RubyGem</th>
       <th scope="col">Title</th>
-      <th scope="col">Action</th>
+      <th scope="col">CVE</th>
     </tr>
   </thead>
 
@@ -16,13 +16,8 @@
         <td><%= vulnerability.date.strftime('%d.%m.%Y') %></td>
         <td><%= vulnerability.rubygem %></td>
         <td><%= vulnerability.title %></td>
-        <td>
-          <%= link_to 'Show', vulnerability_path(vulnerability), class: 'block-link' %>
-          <%= link_to 'Destroy', vulnerability, method: :delete, data: { confirm: 'Are you sure?' }, class: 'block-link' %>
-        </td>
+        <td><%= vulnerability.cve %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'New Vulnerability', new_vulnerability_path, class: 'btn btn-primary' %>
