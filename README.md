@@ -22,3 +22,49 @@ Requirements:
 * Parses only first page
 * Does not parse description
 
+### Description
+
+Task is iplemented on **Ruby 2.5.3**
+
+Framework: **Ruby on Rails 5.2.3**
+
+Language: **English**
+
+Database: **PostgreSQL**
+
+Backend adapter: **Sidekiq** using **Whenever**
+
+### To Start
+
+1. Clone this repository
+2. Install all necessary gems
+```
+$ Bundle
+```
+3. Create database and migraitions
+```
+$ bundle exec rails db:create
+$ bundle exec rails db:migrate
+```
+4. To get Sidekiq browser console
+  * Start rails server
+  ```
+  $ rails s
+  ```
+  * Input in browser
+  ```
+  lockalhost:3000/sidekiq
+  ```
+5. To start shedule
+  * Start rails console
+  ```
+  $ rails c
+  ```
+  * Input parametr
+  ```
+  => VulnerabilityWorker.perform_async
+  ```
+6. To start Sidekiq input in main terminal app direcrory
+```
+$ bundle exec sidekiq
+```
